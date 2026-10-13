@@ -23,6 +23,9 @@
   },
   "files": [
     "dist",
+    ".claude-plugin/plugin.json",
+    "mods/prune/",
+    "!mods/prune/**/*.test.ts",
     "tui.tsx",
     "README.md",
     "LICENSE"
@@ -38,7 +41,7 @@
     "./tui": "./tui.tsx"
   },
   "scripts": {
-    "build": "tsup && node scripts/copy-tui.mjs",
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsup && node scripts/copy-tui.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test test/*.test.ts",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build"

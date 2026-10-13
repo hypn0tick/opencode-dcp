@@ -98,6 +98,22 @@ Deduplication and error-purge strategies run
 at compression time so idle sessions keep their prompt-cache prefix stable.
 State persists per session across restarts via plugin storage.
 
+## Claude Code
+
+The same engine also runs inside Claude Code. A loader that Claude Code's
+embedded Bun preloads proxies the model requests, runs this plugin's context
+pipeline and `prune` tool over the converted transcript, and converts the
+result back. Only outbound requests are changed, and no engine file is. The npm package doubles as the Claude Code plugin, whose
+mod answers the prune call and stages the loader:
+
+```bash
+claude plugin marketplace add arafays/opencode-dcp
+claude plugin install dcp@claude-dcp-arafays
+```
+
+See [`lib/claude/README.md`](lib/claude/README.md) for how it works, install
+details, and configuration.
+
 ## TUI panel
 
 A companion TUI module ships with the package and is **enabled by default**

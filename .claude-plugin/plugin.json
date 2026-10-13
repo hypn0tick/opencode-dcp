@@ -1,0 +1,9 @@
+{
+  "name": "dcp",
+  "version": "2.0.3",
+  "description": "Dynamic Context Pruning for Claude Code: prunes stale conversation ranges on the wire through a Bun preload the plugin stages, with a mod that answers the prune tool.",
+  "author": { "name": "Abdul Rafay Shaikh", "email": "me@arafays.com" },
+  "repository": "https://github.com/arafays/opencode-dcp",
+  "hooks": "./mods/prune/hooks/hooks.json",
+  "commands": ["./mods/prune/commands/dcp.md", "./mods/prune/commands/dcp-prune.md"]
+}

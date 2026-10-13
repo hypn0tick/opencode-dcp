@@ -1,0 +1,5 @@
+{
+  "name": "dcp",
+  "version": "0.1.0",
+  "description": "The prune mod alone, for `claude plugin test mods/prune`; the installable plugin is the package root."
+}

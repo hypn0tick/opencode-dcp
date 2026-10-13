@@ -1,0 +1,12 @@
+{
+  "name": "claude-dcp-arafays",
+  "description": "Dynamic Context Pruning (DCP) for Claude Code: model-driven pruning of stale conversation context.",
+  "owner": { "name": "Abdul Rafay Shaikh", "email": "me@arafays.com" },
+  "plugins": [
+    {
+      "name": "dcp",
+      "description": "Dynamic Context Pruning for Claude Code, from the opencode-dcp npm package.",
+      "source": { "source": "npm", "package": "opencode-dcp" }
+    }
+  ]
+}
